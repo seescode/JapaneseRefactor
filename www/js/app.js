@@ -10,20 +10,24 @@ angular.module('japaneseHelperApp', [
 
 
     $stateProvider
-      // setup an abstract state for the tabs directive
       .state('tab', {
           url: "/tab",
           abstract: true,
           templateUrl: "templates/tabs.html"
       })
-
-      // Each tab has its own nav history stack:
-
+      .state('tab.kanji-list', {
+          url: '/kanji-list',
+          views: {
+              'tab-kanji-list': {
+                  templateUrl: 'templates/kanji-list/kanji-list.html'
+              }
+          }
+      })
       .state('tab.home', {
           url: '/home',
           views: {
               'tab-home': {
-                  templateUrl: 'templates/main.html'
+                  templateUrl: 'templates/home.html'
               }
           }
       });
