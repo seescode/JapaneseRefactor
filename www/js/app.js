@@ -18,7 +18,7 @@ angular.module('japaneseHelperApp', [
       .state('tab.kanji-list', {
           url: '/kanji-list',
           views: {
-              'tab-kanji-list': {
+              'tab-home': {
                   templateUrl: 'templates/kanji-list/kanji-list.html'
               }
           }
