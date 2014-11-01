@@ -8,34 +8,47 @@ angular.module('japaneseHelperApp', [
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
 
     $stateProvider
-    .state('home', {
-        url: '/',
-        templateUrl: '/views/main.html',
-        controller: 'MainCtrl'
-    });
+      // setup an abstract state for the tabs directive
+      .state('tab', {
+          url: "/tab",
+          abstract: true,
+          templateUrl: "templates/tabs.html"
+      })
 
-    $stateProvider
-    .state('kanji-list', {
-        url: '/kanji-list',
-        templateUrl: '/views/kanji-list.html'
-    });
+      // Each tab has its own nav history stack:
 
-    $stateProvider
-    .state('guess-kanji-level-select', {
-        url: '/guess-kanji-level-select',
-        templateUrl: '/views/guess-kanji-level-select.html',
-        controller: 'GuessKanjiLevelSelectCtrl'
-    });
+      .state('tab.home', {
+          url: '/home',
+          views: {
+              'tab-home': {
+                  templateUrl: 'templates/main.html'
+              }
+          }
+      });
 
-    $stateProvider
-    .state('guess-kanji', {
-        url: '/guess-kanji/:level',
-        templateUrl: '/views/guess-kanji.html',
-        controller: 'GuessKanjiCtrl'
-    });
+    //$stateProvider
+    //.state('kanji-list', {
+    //    url: '/kanji-list',
+    //    templateUrl: '/views/kanji-list.html'
+    //});
+
+    //$stateProvider
+    //.state('guess-kanji-level-select', {
+    //    url: '/guess-kanji-level-select',
+    //    templateUrl: '/views/guess-kanji-level-select.html',
+    //    controller: 'GuessKanjiLevelSelectCtrl'
+    //});
+
+    //$stateProvider
+    //.state('guess-kanji', {
+    //    url: '/guess-kanji/:level',
+    //    templateUrl: '/views/guess-kanji.html',
+    //    controller: 'GuessKanjiCtrl'
+    //});
+
+    $urlRouterProvider.otherwise('/tab/home');
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
