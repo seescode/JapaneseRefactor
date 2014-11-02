@@ -1,0 +1,20 @@
+﻿<div class="row">
+    <div class="col">
+        <div class="row" ng-repeat="level in firstHalfLevels">
+            <ul class="list">
+                <li class="item">
+                    <a ng-href="#/tab/guess-kanji/{{level}}">Level <span ng-bind="level"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col">
+        <div class="row" ng-repeat="level in lastHalfLevels">
+            <ul class="list">
+                <li class="item">
+                    <a ng-href="#/tab/guess-kanji/{{level}}">Level <span ng-bind="level"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
