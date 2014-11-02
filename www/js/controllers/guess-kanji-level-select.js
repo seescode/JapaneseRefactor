@@ -1,14 +1,15 @@
 ﻿'use strict';
 
 angular.module('japaneseHelperApp')
-  .controller('GuessKanjiLevelSelectCtrl', function ($scope, localStorageService, kanjiHelper, constantsService) {
+  .controller('GuessKanjiLevelSelectCtrl', function ($scope, /*localStorageService,*/ kanjiHelper, constantsService) {
 
-      $scope.currentLevel = localStorageService.get('currentLevel');
+      //$scope.currentLevel = localStorageService.get('currentLevel');
 
-      if ($scope.currentLevel === null) {
-          localStorageService.set('currentLevel', '1');
-          $scope.currentLevel = 1;
-      }
+      //if ($scope.currentLevel === null) {
+      //    localStorageService.set('currentLevel', '1');
+      //    $scope.currentLevel = 1;
+      //}
+      $scope.currentLevel = 1;
 
       var totalLevels = Math.ceil(kanjiHelper.RtkList.Length() / constantsService.KANJI_PER_LEVEL);
 
