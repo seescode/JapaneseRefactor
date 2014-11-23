@@ -1,19 +1,19 @@
 ﻿'use strict';
 
 angular.module('japaneseHelperApp')
-  .controller('GuessKanjiCtrl', function ($scope, $routeParams, $location, localStorageService, levelGeneratorService) {
+  .controller('GuessKanjiCtrl', function ($scope, $stateParams, $location, levelGeneratorService) {
 
       //Get the current level from the url.
-      $scope.level = $routeParams.level
+      $scope.level = $stateParams.level
 
-      var currentLevel = localStorageService.get('currentLevel');
+      //var currentLevel = localStorageService.get('currentLevel');
 
-      if (currentLevel === null) {
-          localStorageService.set('currentLevel', '1');
-      }
+      //if (currentLevel === null) {
+          //localStorageService.set('currentLevel', '1');
+      //}
 
       if ($scope.level == 0) {
-          $scope.level = localStorageService.get('currentLevel');
+          //$scope.level = localStorageService.get('currentLevel');
       }      
 
       // Need to refactor and put this into the game logic service
@@ -51,7 +51,7 @@ angular.module('japaneseHelperApp')
                   $scope.level = String(lvl);
 
                   //save the level
-                  localStorageService.set('currentLevel', lvl);
+                  //localStorageService.set('currentLevel', lvl);
 
                   kanjiSet = levelGeneratorService.generate($scope.level);
               }
