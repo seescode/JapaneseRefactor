@@ -10,77 +10,41 @@ angular.module('japaneseHelperApp', [
 
 
     $stateProvider
-      .state('tab', {
-          url: "/tab",
-          abstract: true,
-          templateUrl: "templates/tabs.html"
-      })
-      .state('tab.kanji-list', {
+      .state('kanji-list', {
           url: '/kanji-list',
-          views: {
-              'tab-home': {
-                  templateUrl: 'templates/kanji-list/kanji-list.html'
-              }
-          }
+          templateUrl: 'templates/kanji-list/kanji-list.html'
       })
-      .state('tab.guess-kanji-level-select', {
+      .state('kanji-set', { 
+          url: '/kanji-set/:level',
+          controller: 'GuessKanjiLevelSelectCtrl',
+          templateUrl: 'templates/kanji-list/kanji-set.html'
+      })
+      .state('guess-kanji-level-select', {
           url: '/guess-kanji-level-select',
-          views: {
-              'tab-home': {
-                  controller: 'GuessKanjiLevelSelectCtrl',
-                  templateUrl: 'templates/guess-kanji/guess-kanji-level-select.html'
-              }
-          }
+          controller: 'GuessKanjiLevelSelectCtrl',
+          templateUrl: 'templates/guess-kanji/guess-kanji-level-select.html'
       })
-      .state('tab.guess-kanji', {
+      .state('guess-kanji', {
           url: '/guess-kanji/:level',
-          views: {
-              'tab-home': {
-                  controller: 'GuessKanjiCtrl',
-                  templateUrl: 'templates/guess-kanji/guess-kanji.html'
-              }
-          }
+          controller: 'GuessKanjiCtrl',
+          templateUrl: 'templates/guess-kanji/guess-kanji.html'
       })
-      .state('tab.home', {
+      .state('home', {
           url: '/home',
-          views: {
-              'tab-home': {
-                  templateUrl: 'templates/home.html'
-              }
-          }
+          templateUrl: 'templates/home.html'
       });
 
-    //$stateProvider
-    //.state('kanji-list', {
-    //    url: '/kanji-list',
-    //    templateUrl: '/views/kanji-list.html'
-    //});
-
-    //$stateProvider
-    //.state('guess-kanji-level-select', {
-    //    url: '/guess-kanji-level-select',
-    //    templateUrl: '/views/guess-kanji-level-select.html',
-    //    controller: 'GuessKanjiLevelSelectCtrl'
-    //});
-
-    //$stateProvider
-    //.state('guess-kanji', {
-    //    url: '/guess-kanji/:level',
-    //    templateUrl: '/views/guess-kanji.html',
-    //    controller: 'GuessKanjiCtrl'
-    //});
-
-    $urlRouterProvider.otherwise('/tab/home');
+    $urlRouterProvider.otherwise('/home');
 })
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
+.run(function ($ionicPlatform) {
+    $ionicPlatform.ready(function () {
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        if (window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if (window.StatusBar) {
+            StatusBar.styleDefault();
+        }
+    });
 })

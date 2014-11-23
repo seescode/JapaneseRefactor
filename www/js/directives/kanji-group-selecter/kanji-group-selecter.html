@@ -1,18 +1,18 @@
 ﻿<div class="row">
     <div class="col">
-        <div class="row" ng-repeat="level in firstHalfLevels">
+        <div class="row">
             <ul class="list">
-                <li class="item">
-                    <a ng-href="#/tab/guess-kanji/{{level}}">Level <span ng-bind="level"></span></a>
+                <li class="item" ng-repeat="level in firstHalfLevels">
+                    <a ng-href="{{url}}{{level}}"><span ng-bind="text"></span> <span ng-bind="level"></span></a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="col">
-        <div class="row" ng-repeat="level in lastHalfLevels">
+        <div class="row">
             <ul class="list">
-                <li class="item">
-                    <a ng-href="#/tab/guess-kanji/{{level}}">Level <span ng-bind="level"></span></a>
+                <li class="item" ng-repeat="level in lastHalfLevels">
+                    <a ng-href="{{url}}{{level}}"><span ng-bind="text"></span> <span ng-bind="level"></span></a>
                 </li>
             </ul>
         </div>

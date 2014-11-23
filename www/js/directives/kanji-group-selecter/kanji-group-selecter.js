@@ -7,7 +7,8 @@ angular.module('japaneseHelperApp')
         replace: false,
         templateUrl: '/js/directives/kanji-group-selecter/kanji-group-selecter.html',
         scope: { 
-            pageSize: '@'
+            url: '@',
+            text: '@'
         },
         link: function (scope, element, attrs) {
             /*
