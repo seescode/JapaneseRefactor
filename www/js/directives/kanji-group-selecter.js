@@ -5,7 +5,7 @@ angular.module('japaneseHelperApp')
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/js/directives/kanji-group-selecter/kanji-group-selecter.html',
+        templateUrl: 'templates/directives/kanji-group-selecter.html',
         scope: { 
             url: '@',
             text: '@'
