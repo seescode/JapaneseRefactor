@@ -10,9 +10,11 @@
 
     <ion-content class="padding">
 
-        <div class="list-group">
-            <a class="list-group-item active" href="#/guess-kanji/0">Resume Level <span ng-bind="currentLevel"></a>
-            <a class="list-group-item" ng-repeat="level in levels" ng-href="#/guess-kanji/{{level}}">Level <span ng-bind="level"></span></a>
+        <div>
+            <a class="item" href="#/guess-kanji/0">
+                <div>Resume Level <span ng-bind="currentLevel"></div>
+            </a>
+            <a ng-repeat="level in levels" ng-href="#/guess-kanji/{{level}}">Level <span ng-bind="level"></span></a>
         </div>
 
         <div kanji-group-selecter url="#/guess-kanji/" text="Level"></div>

@@ -2,18 +2,22 @@
     <div class="col">
         <div class="row">
             <ul class="list">
-                <li class="item" ng-repeat="level in firstHalfLevels">
-                    <a ng-href="{{url}}{{level}}"><span ng-bind="text"></span> <span ng-bind="level"></span></a>
-                </li>
+                <a ng-repeat="level in firstHalfLevels" ng-href="{{url}}{{level}}">
+                    <li class="item level-select-item">
+                        <span ng-bind="text"></span> <span ng-bind="level"></span>
+                    </li>
+                </a>
             </ul>
         </div>
     </div>
     <div class="col">
         <div class="row">
             <ul class="list">
-                <li class="item" ng-repeat="level in lastHalfLevels">
-                    <a ng-href="{{url}}{{level}}"><span ng-bind="text"></span> <span ng-bind="level"></span></a>
-                </li>
+                <a ng-repeat="level in lastHalfLevels" ng-href="{{url}}{{level}}">
+                    <li class="item level-select-item">
+                        <span ng-bind="text"></span> <span ng-bind="level"></span>
+                    </li>
+                </a>
             </ul>
         </div>
     </div>
