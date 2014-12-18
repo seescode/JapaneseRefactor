@@ -4,10 +4,9 @@ angular.module('japaneseHelperApp')
   .directive('answerOption', function(kanjiHelper) {
     return {
         restrict: 'A',
-        template: '<div ng-click="click()">{{answerText}}</div>',
+        template: '<div>{{answerText}}</div>',
         scope: { 
-            answerText: '@',
-            click: '&'
+            answerText: '@'
         },
         controller: function ($scope) {
         },
