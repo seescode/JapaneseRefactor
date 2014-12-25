@@ -59,6 +59,7 @@ angular.module('japaneseHelperApp')
               populateItems();
           }
           else {
+              alert("Wrong! " + $scope.questionText.keyword + " = " + $scope.questionText.kanji);
               $scope.questionText.incorrect();
               $location.url('/guess-kanji-level-select');
           }
